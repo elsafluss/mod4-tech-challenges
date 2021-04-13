@@ -75,26 +75,29 @@ Given a number, return its roman numeral equivalent as the shortest string possi
 -   That feels like nested for loops ... eeesh
 
 ## Write out a few lines of initial pseudocode: (mid-level design, NOT REAL CODE)
-given 384, find where it falls (between 400 and 100)
-remove 100 from it, return a C
-number is now 284, can I remove another 100? yes. return a C
-number is now 184, can I remove another 100? yes. return a C
-number is now 84, can I remove another 100? no. go to next numeral
-number is still 84, can I remove 90? no. go to next numeral
-number is still 84, can I remove 50? yes. return an L
-  no need to check that again, because if I could remove another 50, then I would have removed a 100 a few steps earlier (but I think I'll let the function check it again anyway)
-number is 34, can I remove 40? no. go to next numeral
-number is still 34, can I remove 10? yes. return an X
-number is 24, can I remove 10? yes. return an X
-number is 14, can I remove 10? yes. return an X
-number is 4, can I remove 10? no. go to next numeral
-number is still 4, can I remove 5? no. go to next numeral
-number is still 4, can I remove 4? yes. return an IV
-number is 0, can I remove 4? no. go to next numeral
-numer is still 0, can I remove 1? no. end
+- given 384, find where it falls (between 400 and 100)
+- remove 100 from it, return a C
+- number is now 284, can I remove another 100? yes. return a C
+- number is now 184, can I remove another 100? yes. return a C
+- number is now 84, can I remove another 100? no. go to next numeral
+- number is still 84, can I remove 90? no. go to next numeral
+- number is still 84, can I remove 50? yes. return an L
+  - no need to check that again, because if I could remove another 50, then I would have removed a 100 a few steps earlier (but I think I'll let the function check it again anyway)
+- number is 34, can I remove 40? no. go to next numeral
+- number is still 34, can I remove 10? yes. return an X
+- number is 24, can I remove 10? yes. return an X
+- number is 14, can I remove 10? yes. return an X
+- number is 4, can I remove 10? no. go to next numeral
+- number is still 4, can I remove 5? no. go to next numeral
+- number is still 4, can I remove 4? yes. return an IV
+- number is 0, can I remove 4? no. go to next numeral
+- number is still 0, can I remove 1? no. end
 
-answer given would be CCCLXXXIV (I googled this, it's correct)
+- answer given would be CCCLXXXIV (I googled this, it's correct)
 
 ## Write out any implementation code OR link to repl
+https://replit.com/@ElsaFluss/SmoggyFloweryDatabases#index.js
+
 
 ## What is the Big O complexity of your solution?
+The Big O complexity seems like it's n+1. It's a recursive function, it's not necessarily getting easier by half each time, and it doesn't go over the data more than once.
