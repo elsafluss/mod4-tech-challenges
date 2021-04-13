@@ -83,4 +83,48 @@ Easy to pop elements in/out of arrays and check its length
 
 ## Write out any implementation code OR link to repl
 
+```
+const array = ['[', ']', '(', ')', '{', '}', '}']
+
+let leftSquareCount = 0
+let rightSquareCount = 0
+let leftCurlyCount = 0
+let rightCurlyCount = 0
+let leftParenCount = 0
+let rightParenCount = 0
+
+const isEven = array.length % 2 === 0
+console.log(isEven)
+
+let oppositeArray = array.map(item => {
+  if(item === '[') {
+    leftSquareCount++
+    return ']'
+  } else if (item === ']') {                            
+    rightSquareCount++
+    return '['
+  } else if (item === '{') {
+    leftCurlyCount++
+    return '}'
+  } else if (item === '}') {
+    rightCurlyCount++
+    return '{'
+  } else if (item === '(') {
+    leftParenCount++
+    return ')'
+  } else if (item === ')') {
+    rightParenCount++
+    return '('
+  }
+})
+
+const squaresEven = (leftSquareCount === rightSquareCount)
+const curliesEven = (leftCurlyCount === rightCurlyCount)
+const parensEven = (leftParenCount === rightParenCount)
+
+console.log(squaresEven)
+console.log(curliesEven)
+console.log(parensEven)
+```
+
 ## What is the Big O complexity of your solution?
